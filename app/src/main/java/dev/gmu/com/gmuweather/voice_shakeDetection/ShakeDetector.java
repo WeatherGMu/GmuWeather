@@ -97,14 +97,13 @@ public class ShakeDetector implements SensorEventListener {
     private static final int INTERVAL = 200;
 
     private static SensorManager mSensorManager;
-    private static ShakeDetector mSensorEventListener;
+    public static ShakeDetector mSensorEventListener;
 
     private OnShakeListener mShakeListener;
     private ArrayList<SensorBundle> mSensorBundles;
     private Object mLock;
     private float mThresholdAcceleration;
     private int mThresholdShakeNumber;
-
     /**
      * Interface definition for a callback to be invoked when the device has been shaken.
      */
@@ -182,7 +181,7 @@ public class ShakeDetector implements SensorEventListener {
         mSensorEventListener.setConfiguration(sensibility, shakeNumber);
     }
 
-    private ShakeDetector(OnShakeListener listener) {
+    public ShakeDetector(OnShakeListener listener) {
         if (listener == null) {
             throw new IllegalArgumentException("Shake listener must not be null");
         }
