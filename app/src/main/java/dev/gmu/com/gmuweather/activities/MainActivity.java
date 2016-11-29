@@ -1170,7 +1170,31 @@ public static String staticCity;
             else if ("Temperature".contentEquals((String) wordsList.getAdapter().getItem(0))) {
                 tts.speak("The current temperature is " +  temperature + "degrees.", TextToSpeech.QUEUE_FLUSH, null);
             }
+            else if ("Weather".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+                tts.speak("The current temperature is " +  temperature + "degrees.", TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("weather".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+                tts.speak("The current temperature is " +  temperature + "degrees.", TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("temp".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+                tts.speak("The current temperature is " +  temperature + "degrees.", TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("Temp".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+                tts.speak("The current temperature is " +  temperature + "degrees.", TextToSpeech.QUEUE_FLUSH, null);
+            }
 
+            else if ("Help".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+                tts.speak("Try saying options like Temparature, Weather, or Temp to get the current temparuture in your area" +
+                                "Say Forecast or Details to get a detailed expanation of the weather"+
+                        "Say Clothing to get suggestions on how to dress based on the weather"+
+                        "Say Location to get your current location", TextToSpeech.QUEUE_FLUSH, null);
+            }
+            else if ("help".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+                tts.speak("Try saying options like Temparature, Weather, or Temp to get the current temparuture in your area" +
+                        "Say Forecast or Details to get a detailed expanation of the weather"+
+                        "Say Clothing to get suggestions on how to dress based on the weather"+
+                        "Say Location to get your current location", TextToSpeech.QUEUE_FLUSH, null);
+            }
             else if ("Hello".contentEquals((String) wordsList.getAdapter().getItem(0))) {
                 tts.speak("Hi. How are you?", TextToSpeech.QUEUE_FLUSH, null);
             }
@@ -1195,6 +1219,8 @@ public static String staticCity;
                     tts.speak("Sorry your location is not yet available. I think your internet connection is bad. Why? Are you in Ghana!?", TextToSpeech.QUEUE_FLUSH, null);
                 }
             }
+
+
             else if ("Good".contentEquals((String) wordsList.getAdapter().getItem(0))) {
                 tts.speak("Glad to hear it.", TextToSpeech.QUEUE_FLUSH, null);
             }
@@ -1222,7 +1248,9 @@ public static String staticCity;
             else if ("detail".contentEquals((String) wordsList.getAdapter().getItem(0))) {
                 tts.speak("You are currently in" + current_City + " Humidity is" + todayWeather.getHumidity() + "percent" + "" + todayWeather.getDescription() + "The wind is moving at a speed of " + todayWeather.getWind() + "miles per hour", TextToSpeech.QUEUE_FLUSH, null);
             }
-
+            else if ("Detail".contentEquals((String) wordsList.getAdapter().getItem(0))) {
+                tts.speak("You are currently in" + current_City + " Humidity is" + todayWeather.getHumidity() + "percent" + "" + todayWeather.getDescription() + "The wind is moving at a speed of " + todayWeather.getWind() + "miles per hour", TextToSpeech.QUEUE_FLUSH, null);
+            }
             else if ("3".contentEquals((String) wordsList.getAdapter().getItem(0))) {
                 tts.speak("This will give you a five day weather forecast.", TextToSpeech.QUEUE_FLUSH, null);
             }
@@ -1230,8 +1258,9 @@ public static String staticCity;
                 tts.speak("You are currently in"+ current_City+" Humidity is"+todayWeather.getHumidity()+"percent" +""+todayWeather.getDescription()+"The wind is moving at a speed of " + todayWeather.getWind()+ "miles per hour", TextToSpeech.QUEUE_FLUSH, null);
             }
             else if ("Forecast".contentEquals((String) wordsList.getAdapter().getItem(0))) {
-                tts.speak("You are currently in"+ current_City+" Humidity is"+todayWeather.getHumidity()+"percent" +""+todayWeather.getDescription()+"The wind is moving at a speed of " + todayWeather.getWind()+ "miles per hour", TextToSpeech.QUEUE_FLUSH, null);
+                tts.speak("You are currently in"+ current_City+" Humidity is" + todayWeather.getHumidity()+"percent" +""+todayWeather.getDescription()+"The wind is moving at a speed of " + todayWeather.getWind()+ "miles per hour", TextToSpeech.QUEUE_FLUSH, null);
             }
+
             else if ("clothing".contentEquals((String) wordsList.getAdapter().getItem(0))) {
                 if ( temperature>=75 &&  temperature<90) {
                     tts.speak("Well, since it's currently " +  temperature + "degrees outside, a short sleeved shirt and shorts would be a good idea.", TextToSpeech.QUEUE_FLUSH, null);
@@ -1274,7 +1303,7 @@ public static String staticCity;
             }
 
             else {
-                tts.speak("Can you repeat that? I might have misunderstood you because I don't think that command was a menu item.", TextToSpeech.QUEUE_FLUSH, null);
+                tts.speak("Can you repeat that? Say help for possible options", TextToSpeech.QUEUE_FLUSH, null);
 
 
             }
